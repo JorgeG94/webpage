@@ -967,7 +967,6 @@
 <p><code class="docutils literal notranslate"><span class="pre">member-attributes</span></code>（可选）：</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">public</span></code> 或 <code class="docutils literal notranslate"><span class="pre">private</span></code> 访问属性</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">protected</span></code> 访问属性</p></li>
 <li><p>带有或不带有 <code class="docutils literal notranslate"><span class="pre">dimension</span></code> 的 <code class="docutils literal notranslate"><span class="pre">allocatable</span></code> 以指定动态数组</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pointer</span></code>，<code class="docutils literal notranslate"><span class="pre">codimension</span></code>，<code class="docutils literal notranslate"><span class="pre">contiguous</span></code>，<code class="docutils literal notranslate"><span class="pre">volatile</span></code>，<code class="docutils literal notranslate"><span class="pre">asynchronous</span></code></p></li>
 </ul>
@@ -978,12 +977,7 @@
 <span class="w">  </span><span class="c">! private hides it from use outside of the t_example&#39;s scope.</span>
 <span class="w">  </span><span class="c">! The default initialization [=0] is the [init] part.</span>
 
-<span class="w">  </span><span class="c">! 2nd case: protected</span>
-<span class="w">  </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">protected</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span>
-<span class="w">  </span><span class="c">! In contrary to private, protected allows access to i assigned value outside of t_example</span>
-<span class="w">  </span><span class="c">! but is not definable, i.e. a value may be assigned to i only within t_example.</span>
-
-<span class="w">  </span><span class="c">! 3rd case: dynamic 1-D array</span>
+<span class="w">  </span><span class="c">! 2nd case: dynamic 1-D array</span>
 <span class="w">  </span><span class="kt">real</span><span class="p">,</span><span class="w"> </span><span class="k">allocatable</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span>
 <span class="w">  </span><span class="c">! the same as</span>
 <span class="w">  </span><span class="kt">real</span><span class="p">,</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span><span class="p">(:)</span>
