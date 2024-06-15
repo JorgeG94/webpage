@@ -465,9 +465,9 @@
 <p>Zatem, jako kontrybutor musisz tylko przesłać zmiany w kodzie źródłowym witryny, a nie skompilowanym wyniku, ponieważ jest on budowany automatycznie na podstawie kodu źródłowego gałęzi domyślnej.</p>
 </section>
 <section id="workflow">
-<h2>Przepływ pracy<a class="headerlink" href="#workflow" title="Link to this heading">¶</a></h2>
+<h2>Organizacja zadań<a class="headerlink" href="#workflow" title="Link to this heading">¶</a></h2>
 <p>Kontrybucje do strony są tworzone poprzez prośbę o ściągnięcie wysyłaną do repozytorium github: <a class="reference external" href="https://github.com/fortran-lang/webpage/">https://github.com/fortran-lang/webpage/</a>.</p>
-<p>Przepływ pracy w tym celu przyjmuje następującą formę:</p>
+<p>Organizacja zadań w tym celu przyjmuje następującą formę:</p>
 <ol class="arabic simple">
 <li><p>Stwórz/zaktualizuj osobiste rozgałęzienie strony</p>
 <ul class="simple">
@@ -485,7 +485,7 @@
 <li><p><em>n.p.</em><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--set-upstream</span> <span class="pre">origin</span> <span class="pre">naprawa-pisowni-strona-główna</span></code></p></li>
 </ul>
 </li>
-<li><p>Stwórz prośbę o ściągnięcie na stronie fortran-lang/webpage z swojego zmodyfikowanego rozgałęzienia</p>
+<li><p>Stwórz prośbę o ściągnięcie na stronie fortran-lang/webpage ze swojego zmodyfikowanego rozgałęzienia</p>
 <ul class="simple">
 <li><p>(Zobacz <a class="reference external" href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request">Github pomoc: tworzenia prośby o ściągnięcie</a> )</p></li>
 </ul>
@@ -493,32 +493,25 @@
 </ol>
 <p><strong>Note: Before opening a pull request you must build your changes locally using Sphinx (see <a class="reference external" href="https://github.com/fortran-lang/webpage/blob/HEAD/README.md">README.md</a>) to verify that your changes build correctly and render as you expect.</strong></p>
 <p><strong>Uwaga: Możesz kontynuować przesyłania zmian do swojej gałęzi po stworzeniu żądania o ściągnięcie - to żądanie zostanie odpowiednio zaktualizowane</strong></p>
-<p>Your pull request will be reviewed by other members of the community who may request changes.
-GitHub provides an easy interface on its website to apply (or reject) any reviewer-suggested changes with a click of a button.
-This avoids having to manually copy suggestions to your local copy and push back again.
-If you use the „Commit suggestion” button, you will need to update the local copy on your computer using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> if you intend to push more edits from your computer.</p>
-<p>Once your pull request is approved, usually by at least two other community members, it will be merged into the webpage default branch by the maintainers at which point it will be published to the fortran-lang.org site.</p>
-<p>If required, the repository maintainers can build a public preview of your proposed changes which will be available to view at <code class="docutils literal notranslate"><span class="pre">fortran-lang.org/pr/&lt;pr_id&gt;/</span></code> where <code class="docutils literal notranslate"><span class="pre">&lt;pr_id&gt;</span></code> is the numeric identifier of your pull request.</p>
-<p>This allows reviewers to directly view the generated result of your PR.</p>
-<p><strong>Note:</strong> if you push subsequent commits to your pull request branch, you must rebuild the pull request preview by commenting on
-the pull request with «#build_preview».</p>
-<p>After a pull request has been merged and successfully rendered, the workflows will delete the preview build.</p>
-<p><strong>Note:</strong> if your pull request preview link doesn’t work or doesn’t update after re-building, try adding a random parameter to the end of the URL, <em>e.g.</em> <code class="docutils literal notranslate"><span class="pre">https://fortran-lang.org/pr/98?v=2</span></code> - the name and value of the parameter don’t matter, but use different values for each update.
-This will force the GitHub content delivery network to serve you an updated version instead of a cached version which is out-of-date.</p>
+<p>Twoja prośba o ściągnięcie będzie oceniona przez innych członków społeczności, którzy mogą poprosić o wprowadzenie zmian. GitHub na swojej stronie zapewnia łatwy w obsłudze interfejs służący do zaakceptowania (lub odrzucenia) wszystkich sugestii oceniającego poprzez naciśnięcie jednego przycisku. To zapobiega manualnego kopiowaniu sugestii do lokalnej kopii i przesyłania ich ponownie. Po naciśnięciu przycisku „Commit suggestion” wymagane jest zaktualizowanie lokalnej kopii na komputerze przy użyciu komendy <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>, aby przesłać więcej poprawek z komputera.</p>
+<p>Po tym jak twoja prośba o ściągnięcie zostanie zaakceptowana, zazwyczaj przez dwóch lub więcej członków społeczności, zostanie ona przyłączona do domyślnej gałęzi strony przez opiekunów, po czym zostanie opublikowana na stronie frotran-lang.org.</p>
+<p>W razie potrzeby, opiekunowie repozytorium mogą stworzyć publiczny podgląd zaproponowanych przez ciebie zmian, który będzie dostępny do obejrzenia pod adresem <code class="docutils literal notranslate"><span class="pre">fortran-lang.org/pr/&lt;pr_id&gt;/</span></code>, gdzie <code class="docutils literal notranslate"><span class="pre">&lt;pr_id&gt;</span></code> to numeryczny identyfikator twojego żądania ściągnięcia.</p>
+<p>Dzięki temu oceniający mogą bezpośrednio zobaczyć wygenerowany rezultat twoich zmian.</p>
+<p><strong>Uwaga</strong> jeśli wyślesz kolejne zatwierdzenia (commit) do gałęzi żądania ściągnięcia, wymagane jest ponowne skompilowanie podglądu żądania ściągnięcia poprzez skomentowanie go sformułowaniem «#build_preview».</p>
+<p>Po przyłączeniu żądania ściągnięcia i pomyślnym wyrenderowaniu go, kompilacja podglądu zostanie usunięta.</p>
+<p><strong>Uwaga</strong> jeśli link podglądu twojego żądania ściągnięcia nie działa lub nie aktualizuje się po ponownej kompilacji spróbuj dodać losowy parametr na końcu adresu URL <em>np.</em> <code class="docutils literal notranslate"> <span class="pre">https://fortran-lang.org/pr/98?v=2</span></code> - nazwa i wartość parametru nie mają znaczenia, ale używaj innej wartości dla każdej aktualizacji. To wymusi sieć dostarczania treści GitHub do dostarczenia ci zaktualizowanej wersji zamiast nieaktualnej wersji z pamięci podręcznej.</p>
 </section>
 <section id="style-guide">
-<h2>Style guide<a class="headerlink" href="#style-guide" title="Link to this heading">¶</a></h2>
+<h2>Przewodnik stylu<a class="headerlink" href="#style-guide" title="Link to this heading">¶</a></h2>
 <section id="markdown">
 <h3>Markdown<a class="headerlink" href="#markdown" title="Link to this heading">¶</a></h3>
 <ul class="simple">
-<li><p>Place code excerpts in <a class="reference external" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code-and-syntax-highlighting">code blocks</a>,
-denoted by back ticks (<code class="docutils literal notranslate"><span class="pre">```</span></code>). Use inline code style (<code class="docutils literal notranslate"><span class="pre">`code`</span></code>) for inline code excerpts, programming language keywords, variables names and file names.</p></li>
-<li><p>Have no more than one sentence per source-code line, and break-up long sentences across multiples lines -
-this is important to avoid large git diffs and code review blocks on github.</p></li>
+<li><p>Umieść fragmenty kodu w <a class="reference external" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code-and-syntax-highlighting">blokach kodu</a>, oznaczone podwójnymi grawisami (<code class="docutils literal notranslate"><span class="pre">```</span></code>). Użyj stylu liniowego (<code class="docutils literal notranslate"><span class="pre">`kod`</span></code>) dla liniowych fragmentów kodu, słowach kluczowych języka programowania, nazw zmiennych oraz nazw plików.</p></li>
+<li><p>Nie używaj więcej niż jednego zdania w wersie kodu źródłowego, a długie zdania dziel na wiele wierszy - jest to ważne, aby uniknąć dużych wykazów różnic oraz blokad w przeglądach kodu na githubie.</p></li>
 </ul>
 </section>
 <section id="external-links">
-<h3>External links<a class="headerlink" href="#external-links" title="Link to this heading">¶</a></h3>
+<h3>Linki zewnętrzne<a class="headerlink" href="#external-links" title="Link to this heading">¶</a></h3>
 <p>It is recommended practice for off-site hyperlinks to open in a new tab.
 On <code class="docutils literal notranslate"><span class="pre">Fortran-lang.org</span></code> all such links will automatically be suffixed with a new-tab icon;
 this gives site users prior expectation that the link will lead them off-site while keeping fortran-lang.org open in a previous tab.</p>
