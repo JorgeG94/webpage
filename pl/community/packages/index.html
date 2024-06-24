@@ -447,66 +447,53 @@
 <section class="tex2jax_ignore mathjax_ignore" id="fortran-lang-org-package-index">
 <h1>Spis pakietów Fortran-lang.org<a class="headerlink" href="#fortran-lang-org-package-index" title="Link to this heading">¶</a></h1>
 <section id="package-criteria">
-<h2>Package criteria<a class="headerlink" href="#package-criteria" title="Link to this heading">¶</a></h2>
-<p>The following criteria are required of packages to be indexed:</p>
+<h2>Kryteria pakietu<a class="headerlink" href="#package-criteria" title="Link to this heading">¶</a></h2>
+<p>Wymagane jest spełnienie następujących wymagań, aby pakiety zostały zaindeksowane:</p>
 <ul class="simple">
-<li><p><strong>Relevance</strong>: the package must be primarily implemented in Fortran or provide
-a complete Fortran interface to an existing package or be purposed solely towards
-software development in Fortran.</p></li>
-<li><p><strong>Maturity</strong>: the primary functionality of the package shall be implemented.
-No prototype, testing or partially complete packages will be accepted.
-If the package is hosted on github or similar, it should have at least 5 «stars».</p></li>
-<li><p><strong>Availability</strong>: the package source shall be freely available for browsing online
-or cloning or downloading</p></li>
-<li><p><strong>Open source</strong>: the package shall be licensed under an appropriate <a class="reference external" href="https://opensource.org/licenses">open-source license</a>
-with the license file clearly included with the source code</p></li>
-<li><p><strong>Uniqueness</strong>: the package shall not be a fork or minor revision of existing packages</p></li>
-<li><p><strong>README</strong>: the package shall have some form of README or landing-page clearly
-stating the package purpose and functionality. This should also contain information on the package dependencies and the steps required to build and run.</p></li>
+<li><p><strong>Związek z tematem</strong>: pakiet musi być przede wszystkim zaimplementowany w języku Fortran lub zapewniać kompletny interfejs Fortran dla istniejącego pakietu lub być przeznaczony wyłącznie do tworzenia oprogramowania w języku Fortran.</p></li>
+<li><p><strong>Kompletność</strong>: podstawowa funkcjonalność pakietu powinna być zaimplementowana. Żadne pakiety prototypowe, testowe lub częściowo kompletne nie będą akceptowane. Jeśli pakiet jest hostowany na githubie lub podobnym serwisie, powinien mieć co najmniej 5 „gwiazdek”.</p></li>
+<li><p><strong>Dostępność</strong>: źródło pakietu powinno być dostępne za darmo do przeglądania online, klonowania oraz pobierania</p></li>
+<li><p><strong>Open source</strong>: pakiet powinien być objęty odpowiednią <a class="reference external" href="https://opensource.org/licenses">licencją open-source</a>, a plik z nią powinien być wyraźnie dołączony do kodu źródłowego</p></li>
+<li><p><strong>Wyjątkowość</strong>: pakiet nie może być rozwidleniem ani drobną korektą istniejących pakietów</p></li>
+<li><p><strong>README</strong>: pakiet powinien zawierać jakąś formę pliku README lub strony, która przejrzyście określa przeznaczenie i funkcjonalność pakietu. Powinien on także zawierać informacje na temat zależności pakietu i kroki wymagane do uruchomienia go.</p></li>
 </ul>
-<p>The following criteria are not required but are recommended:</p>
+<p>Następujące wymagania nie są konieczne, lecz spełnienie ich jest zalecane:</p>
 <ul class="simple">
-<li><p><strong>Documentation</strong>: any form of written documentation aimed at users of the package. Ideally
-this should cover:</p>
+<li><p><strong>Dokumentacja</strong>: dowolna forma pisemnej dokumentacji pakietu przeznaczona dla jego użytkowników. Powinna ona obejmować:</p>
 <ul>
-<li><p>Supported / tested compilers</p></li>
-<li><p>Dependencies</p></li>
-<li><p>Build and install process</p></li>
-<li><p>Modules contained within the package</p></li>
-<li><p>Procedures made available and their interfaces</p></li>
-<li><p>Example code</p></li>
+<li><p>Wspierane / przetestowane kompilatory</p></li>
+<li><p>Zależności</p></li>
+<li><p>Proces budowania i instalacji</p></li>
+<li><p>Moduły zawarte w pakiecie</p></li>
+<li><p>Udostępnione procedury i ich interfejsy</p></li>
+<li><p>Przykładowy kod</p></li>
 </ul>
 </li>
-<li><p><strong>Contributing</strong>: details on how users may submit issues and contribute to the development of the
-package</p></li>
-<li><p><strong>Tests</strong>: any form of executable test(s) that can be used to verify the functionality of the package</p></li>
-<li><p><strong>Portability</strong>: no non-standard language extensions or proprietary dependencies</p></li>
-<li><p><strong>FPM</strong>: support installation by the Fortran Package Manager <a class="reference external" href="https://github.com/fortran-lang/fpm">fpm</a></p></li>
+<li><p><strong>Kontrybucje</strong>: szczegóły dotyczące sposobu, w jaki użytkownicy mogą zgłaszać problemy i przyczyniać się do rozwoju pakietu</p></li>
+<li><p><strong>Testy</strong>: dowolna forma testów, których można użyć do sprawdzenia funkcjonalności pakietu</p></li>
+<li><p><strong>Przenaszalność</strong>: brak niestandardowych rozszerzeń językowych i zastrzeżonych zależności</p></li>
+<li><p><strong>FPM</strong>: obsługa instalacji przez Menedżera pakietów Fortran <a class="reference external" href="https://github.com/fortran-lang/fpm">fpm</a></p></li>
 </ul>
 </section>
 <section id="process-for-adding-packages">
-<h2>Process for adding packages<a class="headerlink" href="#process-for-adding-packages" title="Link to this heading">¶</a></h2>
+<h2>Proces dodawania pakietów<a class="headerlink" href="#process-for-adding-packages" title="Link to this heading">¶</a></h2>
 <ol class="arabic simple">
-<li><p>Users should confirm that their project meets the minimum requirements for listing in the
-Fortran-lang package index, as written in this document</p></li>
-<li><p>Users should open a pull request using the «Package index request» template</p></li>
-<li><p>At least three Fortran-lang community members shall review the request against the criteria above</p></li>
-<li><p>If three or more Fortran-lang community members agree that the package should be listed and there is no significant objection, then the pull request will be merged</p></li>
+<li><p>Użytkownicy pownni potwierdzić, że ich projekty spełniają wszystkie wymagania do umieszczenia w indeksie pakietów Fortran-lang zgodnie z tym jak napisano w tym dokumencie</p></li>
+<li><p>Użytkownicy powinni utworzyć żądanie ściągnięcia używając szablonu «Package index request»</p></li>
+<li><p>Minimum trzech użytkowników społeczności Fortran-lang rozpatrzy wniosek pod względem powyższych kryteriów</p></li>
+<li><p>Jeśli trzech lub więcej użytkowników społeczności Fortran-lang zgodzi się, aby pakiet został umieszczony na liście i nie ma żadnych poważnych sprzeciwów, żądanie ściągnięcia zostanie zaakceptowane i przyłączone</p></li>
 </ol>
 </section>
 <section id="package-index-requests">
-<h2>Package index requests<a class="headerlink" href="#package-index-requests" title="Link to this heading">¶</a></h2>
-<p>Package index requests are made by pull requests against the <a class="reference external" href="https://github.com/fortran-lang/webpage/">fortran-lang.org repository</a>.
-See <a class="reference external" href="https://guides.github.com/activities/forking/">this guide</a> for guidance on forking and making pull requests.</p>
-<p>Package details are listed in the <code class="docutils literal notranslate"><span class="pre">data/package_index.yml</span></code> data file.</p>
-<p>To add a package simply create a new entry within this file.
-The data file is ordered by high-level categories merely to aid in navigation;
-find the appropriate category for your package and create a new entry.</p>
+<h2>Żądanie zaindeksowania pakietu<a class="headerlink" href="#package-index-requests" title="Link to this heading">¶</a></h2>
+<p>Żądania zaindeksowania pakietu są wysyłane za pomocą żądania ściągnięcia (pull request) do <a class="reference external" href="https://github.com/fortran-lang/webpage/">repozytorium fortran-lang.org</a>. Zobacz <a class="reference external" href="https://guides.github.com/activities/forking/">ten poradnik</a>, aby otrzymać pomoc w tworzeniu rozwidleń oraz żądań ściągnięcia.</p>
+<p>Szczegóły pakietu wypisane są w pliku <code class="docutils literal notranslate"><span class="pre">data/package_index.yml</span></code>.</p>
+<p>Aby dodać pakiet stwórz nowy wpis w tym pliku. Plik ten podzielony jest na kategorie wyższego stopnia, aby ułatwić nawigację; znajdź odpowiednią kategorię dla twojego pakietu i stwórz nowy wpis.</p>
 <section id="after-adding-a-new-entry-to-package-index-run-the-github-action-fortran-packages-before-building-the-sphinx-build">
-<h3>After adding a new entry to package index, run the github action fortran_packages before building the sphinx build.<a class="headerlink" href="#after-adding-a-new-entry-to-package-index-run-the-github-action-fortran-packages-before-building-the-sphinx-build" title="Link to this heading">¶</a></h3>
+<h3>Po dodaniu nowego wpisu do indeksu pakietów, uruchom akcję GitHub fortran_packages przed wykonaniem kompilacji Sphinx.<a class="headerlink" href="#after-adding-a-new-entry-to-package-index-run-the-github-action-fortran-packages-before-building-the-sphinx-build" title="Link to this heading">¶</a></h3>
 </section>
 <section id="github-hosted-packages">
-<h3>Github hosted packages<a class="headerlink" href="#github-hosted-packages" title="Link to this heading">¶</a></h3>
+<h3>Pakiety hostowane na Githubie<a class="headerlink" href="#github-hosted-packages" title="Link to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">Package_name</span><span class="o">&gt;</span>
     <span class="n">github</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">github_user</span><span class="o">&gt;/&lt;</span><span class="n">repository_name</span><span class="o">&gt;</span>
     <span class="n">description</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">single_line_description</span><span class="o">&gt;</span>
@@ -516,11 +503,11 @@ find the appropriate category for your package and create a new entry.</p>
     <span class="n">license</span><span class="p">:</span> <span class="p">[</span><span class="n">license</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Valid categories:</p>
+<p>Prawidłowe kategorie:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">libraries</span></code>: general libraries</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">interfaces</span></code>: libraries that provide interfaces to other libraries, software or devices</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">programming</span></code>: general programming utilities: errors, logging, testing, documentation <em>etc.</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">libraries</span></code>: ogólne biblioteki</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">interfaces</span></code>: biblioteki tworzące interfejsy dla innych bibliotek, oprogramowania lub urządzeń</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">programming</span></code>: ogólne narzędzia programistyczne: błędy, logowanie, testowanie, dokumentacja <em>itp.</em></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">data-types</span></code>: libraries providing advanced data types: containers, datetime, resizable arrays <em>etc.</em></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">strings</span></code>: string handling libraries</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">io</span></code>: libraries that parse and generate various file formats</p></li>
