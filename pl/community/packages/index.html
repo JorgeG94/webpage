@@ -318,7 +318,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../compilers/">
-  Compilers
+  Kompilatory
  </a>
 </li>
 
@@ -508,37 +508,36 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">libraries</span></code>: ogólne biblioteki</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">interfaces</span></code>: biblioteki tworzące interfejsy dla innych bibliotek, oprogramowania lub urządzeń</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">programming</span></code>: ogólne narzędzia programistyczne: błędy, logowanie, testowanie, dokumentacja <em>itp.</em></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">data-types</span></code>: libraries providing advanced data types: containers, datetime, resizable arrays <em>etc.</em></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">strings</span></code>: string handling libraries</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">io</span></code>: libraries that parse and generate various file formats</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">graphics</span></code>: plotting and GUIs</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">numerical</span></code>: matrices, linear algebra, solvers, root-finding, interpolation, optimization, differential eqns, statistics, machine learning, random numbers <em>etc.</em></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scientific</span></code>: domain-specific scientific libraries or applications</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">examples</span></code>: repositories offering language feature demonstrations, tutorials and benchmarks</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data-types</span></code>: biblioteki zapewniające zaawansowane typy danych: kontenery, datetime, tablice o zmiennym rozmiarze <em>itp.</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">strings</span></code>: biblioteki obsługujące ciągi znaków</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">io</span></code>: biblioteki analizujące i generujące różne formaty plików</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">graphics</span></code>: mapowanie i graficzne interfejsy użytkownika</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numerical</span></code>: macierze, algebra liniowa, urządzenia do rozwiązywania matematycznych problemów, liczenie pierwiastków, interpolacja, optymalizacja, równania różniczkowe, statystyka, uczenie maszynowe, liczby losowe <em>itp.</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scientific</span></code>: biblioteki lub aplikacje specyficzne dla danej dziedziny</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">examples</span></code>: repozytoria oferujące demonstracje funkcji języka, poradniki i porównawcze</p></li>
 </ul>
-<p><strong>Projects listing more than one category must provide good justification thereof in the pull request.</strong></p>
-<p><strong>Notes:</strong></p>
+<p><strong>Projekty chcące wpisać więcej niż jedną kategorię muszą zawrzeć dobre wyjaśnienie w żądaniu ściągnięcia</strong></p>
+<p><strong>Uwagi:</strong></p>
 <ul class="simple">
-<li><p>The package description should clearly describe the functionality of the package in a single sentence.</p></li>
-<li><p>Tags (optional) should contain any terms not already contained in the name or description that users may search directly for. Tags should be separate by spaces.</p></li>
-<li><p>Package version</p>
+<li><p>Opis pakietu powinien w jednym zdaniu jasno wyjaśniać funkcjonalność pakietu.</p></li>
+<li><p>Tagi (opcjonalnie) powinny zawierać wszystkie terminy, których użytkownicy mogą szukać, a które nie są jeszcze zawarte w nazwie lub opisie. Powinny one być oddzielone spacją.</p></li>
+<li><p>Wersja pakietu</p>
 <ul>
-<li><p>this can be determined automatically if a versioned release has been created on github</p></li>
-<li><p>if version is specified, it will override any detected github version</p></li>
-<li><p>if version is «none», then no version information will be displayed. (Use this if
-your package has no version.)</p></li>
+<li><p>Można to ustalić automatycznie opublikowana wersja została stworzona na Githubie</p></li>
+<li><p>Jeśli określono wersję, zastąpi ona każda inną wykrytą wersję GitHub</p></li>
+<li><p>Jeśli wersja ma wartość «none» wówczas nie zostanie wyświetlona żadna informacja o wersji. (Użyj tego jeśli twój pakiet nie ma wersji.)</p></li>
 </ul>
 </li>
-<li><p>Package license</p>
+<li><p>Licencja pakietu</p>
 <ul>
-<li><p>this can be determined automatically if github is able to detect a known license</p></li>
-<li><p>license must be specified if github is unable to detect a known license</p></li>
+<li><p>Można to ustalić automatycznie jeśli GitHub jest w stanie wykryć znaną licencję</p></li>
+<li><p>W przypadku, gdy GitHub nie jest w stanie wykryć żadnej znanej licencji, musi ona zostać określona</p></li>
 </ul>
 </li>
 </ul>
 </section>
 <section id="non-github-hosted-packages">
-<h3>Non-github hosted packages<a class="headerlink" href="#non-github-hosted-packages" title="Link to this heading">¶</a></h3>
+<h3>Pakiety hostowane poza Githubem<a class="headerlink" href="#non-github-hosted-packages" title="Link to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">Package_name</span><span class="o">&gt;</span>
     <span class="n">url</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">repo_url</span><span class="o">&gt;</span>
     <span class="n">description</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">single_line_description</span><span class="o">&gt;</span>
@@ -548,35 +547,35 @@ your package has no version.)</p></li>
     <span class="n">license</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">license</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p><strong>Notes:</strong></p>
+<p><strong>Uwagi:</strong></p>
 <ul class="simple">
-<li><p>License and version information cannot be detected automatically for non-github repositories</p></li>
-<li><p>if your package has no version, then omit the version field</p></li>
-<li><p>a license must be specified for non-github repositories</p></li>
+<li><p>Informacje o licencji i wersji nie mogą zostać automatycznie wykryte dla repozytoriów poza Githubem</p></li>
+<li><p>Jeśli twój pakiet nie ma wersji, pomiń to pole</p></li>
+<li><p>Licencja musi być określona dla repozytoriów spoza Githuba</p></li>
 </ul>
 </section>
 <section id="member-review-checklist">
-<h3>Member review checklist<a class="headerlink" href="#member-review-checklist" title="Link to this heading">¶</a></h3>
-<p>Community members reviewing packages should cover the following points:</p>
+<h3>Lista kontrolna recenzji członków społeczności<a class="headerlink" href="#member-review-checklist" title="Link to this heading">¶</a></h3>
+<p>Członkowie społeczności oceniający pakiety powinni uwzględnić następujące punkty:</p>
 <ol class="arabic simple">
-<li><p>Ensure the package meets the minimum criteria as written in this document</p></li>
-<li><p>Check the package metadata</p>
+<li><p>Upewnij się, że pakiet spełnia minimalne kryteria wymienione wyżej w tym dokumencie</p></li>
+<li><p>Sprawdź metadane pakietu</p>
 <ul class="simple">
-<li><p>Repository exists and is accessible</p></li>
-<li><p>Description clearly and concisely describes the package</p></li>
-<li><p>Assigned category is appropriate</p></li>
+<li><p>Repozytorium istnieje i jest dostępne</p></li>
+<li><p>Opis jasno i zwięźle opisuje pakiet</p></li>
+<li><p>Przypisana kategoria jest odpowiednia</p></li>
 </ul>
 </li>
-<li><p>Check license information</p>
+<li><p>Sprawdź informacje o licencji</p>
 <ul class="simple">
-<li><p>If license field has been omitted: check that github has detected the license</p></li>
-<li><p>If license field is included: check that it matches repository license file</p></li>
+<li><p>Jeśli pole licencji zostało ominięte: sprawdź czy GitHub wykrył licencję</p></li>
+<li><p>Jeśli pole licencji jest uwzględnione: sprawdź czy pasuje do pliku licencji repozytorium</p></li>
 </ul>
 </li>
 </ol>
-<p>After merge:</p>
+<p>Po połączeniu:</p>
 <ul class="simple">
-<li><p>Check that package is available in expected category and search</p></li>
+<li><p>Sprawdź czy pakiet jest widoczny w odpowiedniej kategorii i po wyszukaniu</p></li>
 </ul>
 </section>
 </section>
