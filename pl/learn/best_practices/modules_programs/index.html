@@ -721,12 +721,8 @@
                 
 <section class="tex2jax_ignore mathjax_ignore" id="modules-and-programs">
 <h1>Moduły i programy<a class="headerlink" href="#modules-and-programs" title="Link to this heading">¶</a></h1>
-<p>Modules are the preferred way create modern Fortran libraries and applications.
-As a convention, one source file should always contain only one module, while
-the module name should match the filepath to allow easy navigation in larger
-projects. It is also recommended to prefix module names with the library name
-to avoid name clashes when used as dependency in other projects.</p>
-<p>An example for such a module file is given here</p>
+<p>Moduły są preferowanym sposobem tworzenia nowoczesnych bibliotek i aplikacji Fortran. Dobrą praktyką jest, aby jeden plik źródłowy zawierał tylko jeden moduł, a nazwa modułu powinna odpowiadać ścieżce pliku, aby ułatwić nawigację w większych projektach. Zaleca się również, aby do nazw modułów dodać prefiks z nazwą biblioteki, aby uniknąć kolizji nazw, gdy są używane jako zależności w innych projektach.</p>
+<p>Oto przykładowa nazwa takiego modułu</p>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">!&gt; Interface to TOML processing library.</span>
 <span class="c">!&gt;</span>
 <span class="c">!&gt; ...</span>
@@ -760,18 +756,8 @@ to avoid name clashes when used as dependency in other projects.</p>
 <span class="k">end module </span><span class="n">fpm_toml</span>
 </pre></div>
 </div>
-<p>There are a few things in this example module to highlight. First, every module
-starts with comments documenting the purpose and content of the module.
-Similarly, every procedure starts with a comment briefly describing its
-purpose and the intent of the dummy arguments. Documentation is one of the most
-important parts of creating long-living software, regardless of language.</p>
-<p>Second, imports (<em>use</em>) and exports (<em>public</em>) are explicitly given, this
-allows on a glance at the module source to check the used and available
-procedures, constants and derived types. The imports are usually limited
-to the module scope rather than reimported in every procedure or interface
-scope. Similarly, exports are made explicitly by adding a <em>private</em> statement
-on a single line and explicitly listing all exported symbols in <em>public</em>
-statements.</p>
+<p>Jest kilka rzeczy, które powinny zostać podkreślone w powyższym przykładzie. Po pierwsze, każdy moduł zaczyna się komentarzem, który określa cel i zawartość modułu. Każda procedura również zaczyna się komentarzem, który zwięźle opisuje jej cel oraz intencję fikcyjnych argumentów. Dokumentacja jest jednym z najważniejszych części tworzenia długotrwałego oprogramowania niezależnie od języka.</p>
+<p>Po drugie, importy (<em>use</em>) oraz eksporty (<em>public</em>) są wyraźnie podane, co pozwala na szybkie sprawdzenie dostępnych procedur, stałych i typów pochodnych. Importy są zazwyczaj ograniczone do zakresu modułu, a nie ponownie importowanie w każdym zakresie procedury lub interfejsu. Podobnie, eksporty są wykonywanie jawne poprzez dodanie instrukcji <em>private</em> w pojedynczym wersie i wymieniają wszystkie eksportowane symbole w instrukcjach <em>public</em>.</p>
 <p>Finally, the <code class="docutils literal notranslate"><span class="pre">implicit</span> <span class="pre">none</span></code> statement works for the whole module and there
 is no need to repeat it within each procedure.</p>
 <p>Variables inside a module are static (<em>implicitly saved</em>). It is highly
