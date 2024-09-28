@@ -788,7 +788,7 @@ document.write(`
 </div>
 
 <nav id="bd-toc-nav" class="page-toc"><ul class="nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-convention">Naming Convention</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-convention">Nazewnictwo</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indentation">Indentation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-to-other-languages">Comparison to Other Languages</a></li>
 </ul></nav> </div>
@@ -847,20 +847,12 @@ document.write(`
                    <section class="tex2jax_ignore mathjax_ignore" id="fortran-style-guide">
 <h1>Przewodnik stylu Fortran<a class="headerlink" href="#fortran-style-guide" title="Link to this heading">#</a></h1>
 <section id="naming-convention">
-<h2>Naming Convention<a class="headerlink" href="#naming-convention" title="Link to this heading">#</a></h2>
-<p>Ultimately this is a matter of preference. Here is a style guide that we
-like and that seems to be prevalent in most scientific codes (as well as
-the Fortran standard library), and you are welcome to follow it.</p>
+<h2>Nazewnictwo<a class="headerlink" href="#naming-convention" title="Link to this heading">#</a></h2>
+<p>Koniec końców, jest to kwestia preferencji. Oto poradnik stylu, który nam się podoba i wydaje się być powszechny w większości kodów naukowych (jak również standardowej bibliotece Fortran), dlatego ty również możesz go stosować.</p>
 <ol class="arabic simple">
-<li><p>Use lowercase for all Fortran constructs (<code class="docutils literal notranslate"><span class="pre">do</span></code>, <code class="docutils literal notranslate"><span class="pre">subroutine</span></code>,
-<code class="docutils literal notranslate"><span class="pre">module</span></code>, …).</p></li>
-<li><p>Follow short mathematical notation for mathematical
-variables/functions (<code class="docutils literal notranslate"><span class="pre">Ylm</span></code>, <code class="docutils literal notranslate"><span class="pre">Gamma</span></code>, <code class="docutils literal notranslate"><span class="pre">gamma</span></code>, <code class="docutils literal notranslate"><span class="pre">Enl</span></code>, <code class="docutils literal notranslate"><span class="pre">Rnl</span></code>, …).</p></li>
-<li><p>For other names use all lowercase: try to keep names to one or two
-syllables; if more are required, use underscores to clarify
-(<code class="docutils literal notranslate"><span class="pre">sortpair</span></code>, <code class="docutils literal notranslate"><span class="pre">whitechar</span></code>, <code class="docutils literal notranslate"><span class="pre">meshexp</span></code>, <code class="docutils literal notranslate"><span class="pre">numstrings</span></code>, <code class="docutils literal notranslate"><span class="pre">linspace</span></code>,
-<code class="docutils literal notranslate"><span class="pre">meshgrid</span></code>, <code class="docutils literal notranslate"><span class="pre">argsort</span></code>, <code class="docutils literal notranslate"><span class="pre">spline</span></code>, <code class="docutils literal notranslate"><span class="pre">spline_interp</span></code>,
-<code class="docutils literal notranslate"><span class="pre">spline_interpolate</span></code>, <code class="docutils literal notranslate"><span class="pre">stoperr</span></code>, <code class="docutils literal notranslate"><span class="pre">stop_error</span></code>, <code class="docutils literal notranslate"><span class="pre">meshexp_der</span></code>).</p></li>
+<li><p>Używaj małych liter do wszystkich konstruktów Fortran (<code class="docutils literal notranslate"><span class="pre">do</span></code>, <code class="docutils literal notranslate"><span class="pre">subroutine</span></code>, <code class="docutils literal notranslate"><span class="pre">module</span></code>, …).</p></li>
+<li><p>Stosuj krótką notację matematyczną dla zmiennych/funkcji matematycznych (<code class="docutils literal notranslate"><span class="pre">Ylm</span></code>, <code class="docutils literal notranslate"><span class="pre">Gamma</span></code>, <code class="docutils literal notranslate"><span class="pre">gamma</span></code>, <code class="docutils literal notranslate"><span class="pre">Enl</span></code>, <code class="docutils literal notranslate"><span class="pre">Rnl</span></code>, …).</p></li>
+<li><p>Dla innych nazw używaj wyłącznie małych liter: postaraj się ograniczać do jednej lub dwóch sylab; jeśli wymagana jest dłuższa nazwa używaj podkreślników dla lepszego wyjaśnienia (<code class="docutils literal notranslate"><span class="pre">sortpair</span></code>, <code class="docutils literal notranslate"><span class="pre">whitechar</span></code>, <code class="docutils literal notranslate"><span class="pre">meshexp</span></code>, <code class="docutils literal notranslate"><span class="pre">numstrings</span></code>, <code class="docutils literal notranslate"><span class="pre">linspace</span></code>, <code class="docutils literal notranslate"><span class="pre">meshgrid</span></code>, <code class="docutils literal notranslate"><span class="pre">argsort</span></code>, <code class="docutils literal notranslate"><span class="pre">spline</span></code>, <code class="docutils literal notranslate"><span class="pre">spline_interp</span></code>, <code class="docutils literal notranslate"><span class="pre">spline_interpolate</span></code>, <code class="docutils literal notranslate"><span class="pre">stoperr</span></code>, <code class="docutils literal notranslate"><span class="pre">stop_error</span></code>, <code class="docutils literal notranslate"><span class="pre">meshexp_der</span></code>).</p></li>
 </ol>
 <p>For example „spline interpolation” can be shortened to
 <code class="docutils literal notranslate"><span class="pre">spline_interpolation</span></code>, <code class="docutils literal notranslate"><span class="pre">spline_interpolate</span></code>, <code class="docutils literal notranslate"><span class="pre">spline_interp</span></code>, <code class="docutils literal notranslate"><span class="pre">spline</span></code>,
@@ -922,7 +914,7 @@ Fortran has a different mission (numerical scientific computing).</p>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-convention">Naming Convention</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-convention">Nazewnictwo</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indentation">Indentation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-to-other-languages">Comparison to Other Languages</a></li>
 </ul>

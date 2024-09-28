@@ -876,17 +876,10 @@ document.write(`
 </div>
 <p>Jest kilka rzeczy, które powinny zostać podkreślone w powyższym przykładzie. Po pierwsze, każdy moduł zaczyna się komentarzem, który określa cel i zawartość modułu. Każda procedura również zaczyna się komentarzem, który zwięźle opisuje jej cel oraz intencję fikcyjnych argumentów. Dokumentacja jest jednym z najważniejszych części tworzenia długotrwałego oprogramowania niezależnie od języka.</p>
 <p>Po drugie, importy (<em>use</em>) oraz eksporty (<em>public</em>) są wyraźnie podane, co pozwala na szybkie sprawdzenie dostępnych procedur, stałych i typów pochodnych. Importy są zazwyczaj ograniczone do zakresu modułu, a nie ponownie importowanie w każdym zakresie procedury lub interfejsu. Podobnie, eksporty są wykonywanie jawne poprzez dodanie instrukcji <em>private</em> w pojedynczym wersie i wymieniają wszystkie eksportowane symbole w instrukcjach <em>public</em>.</p>
-<p>Finally, the <code class="docutils literal notranslate"><span class="pre">implicit</span> <span class="pre">none</span></code> statement works for the whole module and there
-is no need to repeat it within each procedure.</p>
-<p>Variables inside a module are static (<em>implicitly saved</em>). It is highly
-recommended to limit the usage of module variables to constant expressions,
-like parameters or enumerators only or export them as <em>protected</em> rather
-than <em>public</em>.</p>
-<p>Submodules can be used to break long dependency chains and shorten recompilation
-cascades in Fortran programs. They also offer the possibility to provide specialized
-and optimized implementations without requiring the use of preprocessor.</p>
-<p>An example from the Fortran standard library is the quadrature module, which
-only defines interfaces to module procedures, but no implementations</p>
+<p>Na koniec, instrukcja <code class="docutils literal notranslate"><span class="pre">implicit</span> <span class="pre">none</span></code> działa w zakresie całego modułu i nie ma potrzeby powtarzania jej w każdej procedurze.</p>
+<p>Zmienne wewnątrz modułu są statyczne (<em>niejawnie zapisane</em>). Zdecydowanie poleca się ograniczenie stosowania w module zmiennych na rzecz wyrażeń stałych, takich jak parametry lub enumeratory oraz eksportowanie ich jako <em>protected</em>, a nie <em>public</em>.</p>
+<p>Podmoduły mogą być używane do łamania długich łańcuchów zależności oraz skracania kaskad rekompilacji w programach Fortran. Oferują również możliwość dostarczania specjalistycznych i zoptymalizowanych implementacji bez konieczności używania preprocesora.</p>
+<p>Przykładem ze standardowej biblioteki Fortran jest moduł kwadraturowy, który definiuje tylko interfejsy procedur modułu, a nie implementacje</p>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">!&gt; Numerical integration</span>
 <span class="c">!&gt;</span>
 <span class="c">!&gt; ...</span>
@@ -916,8 +909,7 @@ only defines interfaces to module procedures, but no implementations</p>
 <span class="k">end module </span><span class="n">stdlib_quadrature</span>
 </pre></div>
 </div>
-<p>While the implementation is provided in separate submodules like the one for the
-trapezoidal integration rule given here.</p>
+<p>Implementacja jest zapewniona w osobnym podmodule, takim jak przedstawiona poniżej reguła całkowania trapezowego.</p>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">!&gt; Actual implementation of the trapezoidal integration rule</span>
 <span class="c">!&gt;</span>
 <span class="c">!&gt; ...</span>
@@ -948,12 +940,8 @@ trapezoidal integration rule given here.</p>
 <span class="k">end submodule </span><span class="n">stdlib_quadrature_trapz</span>
 </pre></div>
 </div>
-<p>Note that the module procedures do not have to be implemented in the same submodule.
-Several submodules can be used to reduce the compilation load for huge modules.</p>
-<p>Finally, when setting up a program, it is recommended to keep the actual implementations
-in the program body at minimum. Reusing implementations from modules allows you to write
-reusable code and focus the program unit on conveying user input to the respective library
-functions and objects.</p>
+<p>Zauważ, że procedury modułu nie muszą być zaimplementowane w tym samym podmodule. Wiele podmodułów może zostać użytych, aby zmniejszyć obciążenie kompilacji dla ogromnych modułów.</p>
+<p>Na koniec, podczas konfigurowania programu zaleca się zachowanie jak najmniejszej liczby implementacji w programie. Ponowne używanie implementacji z modułów pozwala na pisanie kodu wielokrotnego użytku oraz skupieniu jednostki programu na przekazywaniu danych wejściowych użytkownika do odpowiednich funkcji biblioteki i obiektów.</p>
 </section>
 
 <div class="section ablog__blog_comments">
