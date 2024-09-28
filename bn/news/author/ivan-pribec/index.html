@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=96a48853" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=eaa92f49" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -205,154 +205,6 @@ document.write(`
 `);
 </script></div>
     
-      <div class="navbar-item"><div class="dropdown" id="version_switcher">
-  <button
-    type="button"
-    class="btn btn-sm navbar-btn dropdown-toggle"
-    id="version_switcher_button"
-    data-toggle="dropdown"
-  >
-    bn
-    <!-- this text may get changed later by javascript -->
-    <span class="caret"></span>
-  </button>
-  <div
-    id="version_switcher_menu"
-    class="dropdown-menu list-group-flush py-0"
-    aria-labelledby="version_switcher_button"
-  >
-    <!-- dropdown will be populated by javascript on page load -->
-  </div>
-</div>
-
-<!-- NOTE: this JS must live here (not in our global JS file) because it relies
-     on being processed by Jinja before it is run (specifically for replacing
-     variables news/author/ivan-pribec and {'json_url': '_static/data.json', 'version_match': 'bn'}.
--->
-
-<script type="text/javascript">
-  // Check if corresponding page path exists in other version of docs
-  // and, if so, go there instead of the homepage of the other docs version
-  function checkPageExistsAndRedirect(event) {
-    const currentFilePath = "news/author/ivan-pribec",
-      tryUrl = event.target.getAttribute("href");
-    location.href = tryUrl;
-    // this prevents the browser from following the href of the clicked node
-    // (which is fine because this function takes care of redirecting)
-    return false;
-  }
-
-  // Populate the version switcher from the JSON config file
-  (function () {
-    const currentFilePath = "news/author/ivan-pribec";
-    const indexFilePath = "../../../";
-    let btn = document.getElementById("version_switcher_button");
-    // Set empty strings by default so that these attributes exist and can be used in CSS selectors
-    btn.dataset["activeVersionName"] = "";
-    btn.dataset["activeVersion"] = "";
-    // create links to the corresponding page in the other docs versions
-    data = [
-      {
-        name: "English",
-        version: "en",
-        url: "",
-      },
-      {
-        name: "bn",
-        version: "bn",
-        url: "bn/",
-      },
-      {
-        name: "cs",
-        version: "cs",
-        url: "cs/",
-      },
-      {
-        name: "Deutsch",
-        version: "de",
-        url: "de/",
-      },
-      {
-        name: "Español",
-        version: "es",
-        url: "es/",
-      },
-      {
-        name: "Français",
-        version: "fr",
-        url: "fr/",
-      },
-      {
-        name: "ja",
-        version: "ja",
-        url: "ja/",
-      },
-      {
-        name: "Nederlands",
-        version: "nl",
-        url: "nl/",
-      },
-      {
-        name: "pl",
-        version: "pl",
-        url: "pl/",
-      },
-      {
-        name: "Português",
-        version: "pt",
-        url: "pt/",
-      },
-      {
-        name: "Русский",
-        version: "ru",
-        url: "ru/",
-      },
-      {
-        name: "简体中文",
-        version: "zh_CN",
-        url: "zh_CN/",
-      },
-    ];
-    // console.log(data);
-    $.each(data, function (index, entry) {
-      // if no custom name specified (e.g., "latest"), use version string
-      if (!("name" in entry)) {
-        entry.name = entry.version;
-      }
-      // create the node
-      const node = document.createElement("a");
-      node.setAttribute("class", "list-group-item list-group-item-action py-1");
-      node.textContent = `${entry.name}`;
-
-
-      node.setAttribute(
-        "href",
-        `https://fortran-lang.org/${entry.url}${currentFilePath}`,
-      );
-
-      // on click, AJAX calls will check if the linked page exists before
-      // trying to redirect, and if not, will redirect to the homepage
-      // for that version of the docs.
-      node.onclick = checkPageExistsAndRedirect;
-      // Add dataset values for the version and name in case people want
-      // to apply CSS styling based on this information.
-      node.dataset["versionName"] = entry.name;
-      node.dataset["version"] = entry.version;
-
-      $("#version_switcher_menu").append(node);
-      // replace dropdown button text with the preferred display name of
-      // this version, rather than using sphinx's  variable.
-      // also highlight the dropdown entry for the currently-viewed
-      // version's entry
-      if (entry.version == "bn") {
-        node.classList.add("active");
-        btn.innerText = btn.dataset["activeVersionName"] = entry.name;
-        btn.dataset["activeVersion"] = entry.version;
-      }
-    });
-  })();
-</script></div>
-    
   </div>
   
   <div class=" navbar-header-items">
@@ -495,22 +347,28 @@ document.write(`
 </ul></div>
       
         <div class="navbar-item">
-<form class="bd-search d-flex align-items-center"
-      action="../../../search/"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search"
-         aria-label="Search"
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
       
     </div>
     
@@ -531,6 +389,10 @@ document.write(`
     </div>
   
 
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
   
 </div>
 
@@ -670,22 +532,28 @@ document.write(`
 </ul></div>
         
           <div class="navbar-item">
-<form class="bd-search d-flex align-items-center"
-      action="../../../search/"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search"
-         aria-label="Search"
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
         
       </div>
     
@@ -758,11 +626,6 @@ document.write(`
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">  
-<br />
-
-
-<nav id="bd-toc-nav" class="page-toc"></nav> </div>
   </div>
   
   <div id="rtd-footer-container"></div>
@@ -893,6 +756,17 @@ Fortran news from the previous month.</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">  
+<br />
+
+
+<nav id="bd-toc-nav" class="page-toc"></nav> </div>
+
+</div></div>
               
             
           </div>
