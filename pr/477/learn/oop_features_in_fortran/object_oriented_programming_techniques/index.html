@@ -760,7 +760,7 @@ existing one (the <strong>parent</strong> type):</p>
 </pre></div>
 </div>
 <p>An object of this type</p>
-<div class="highlight-f90 notranslate"><div class="highlight"><pre><span></span><span class="k">TYPE</span><span class="p">(</span><span class="n">charged_body</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">a_proton</span>
+<div class="highlight-f90 notranslate"><div class="highlight"><pre><span></span><span class="k">type</span><span class="p">(</span><span class="n">charged_body</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">a_proton</span>
 </pre></div>
 </div>
 <p>would then have the following type components:</p>
@@ -1018,7 +1018,7 @@ setup code might at first sight appear frivolous; however, once type
 extension is used on a larger scale, setting or modifying further
 components in the conventional way becomes rather irksome without a
 concept like that above, especially if
-<a class="reference internal" href="#sec:tbp"><span class="xref myst">type-bound procedures</span></a>
+<em>type-bound procedures</em>
 with a simple <em>and</em> uniform interface must be implemented;</p></li>
 <li><p>The object <code class="docutils literal notranslate"><span class="pre">a_wtype</span></code> remains unchanged in case an unsuitable value is
 provided for <code class="docutils literal notranslate"><span class="pre">a_component</span></code>. One could add explicit error handling, but
@@ -1059,8 +1059,8 @@ to set up a <code class="docutils literal notranslate"><span class="pre">wtype</
 </div>
 </section>
 </section>
-<section id="type-bound-procedures-tbp-sec-tbp">
-<h2>Type-bound procedures (TBP) {#sec:tbp}<a class="headerlink" href="#type-bound-procedures-tbp-sec-tbp" title="Link to this heading">#</a></h2>
+<section id="type-bound-procedures-tbp">
+<h2>Type-bound procedures (TBP)<a class="headerlink" href="#type-bound-procedures-tbp" title="Link to this heading">#</a></h2>
 <p>To resolve the class mismatch issues arising from the use of polymorphic
 objects, one needs a language mechanism for making a run-time decision
 on a procedure invocation that depends on the dynamic type of a
@@ -1206,7 +1206,7 @@ all conceivable extension types.</p></li>
 <h2>Abstract types and interfaces<a class="headerlink" href="#abstract-types-and-interfaces" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">sortable</span></code> type used for demonstrating the <code class="docutils literal notranslate"><span class="pre">sortable_list</span></code>
 functionality in the
-<a class="reference internal" href="#sec:oop_techniques"><span class="xref myst">object-based chapter’s</span></a>
+<em>object-based chapter’s</em>
 example was set up as a fixed container-like type. It is desirable to be
 able to use the list machinery more flexibly i.e., for any type that
 supports the “less-than” comparison. This can be achieved by introducing
@@ -1261,12 +1261,10 @@ definition of the <code class="docutils literal notranslate"><span class="pre">s
 <span class="k">end type</span>
 </pre></div>
 </div>
-</li>
-</ol>
 <p>The advantage of this is that no change to the preexisting machinery
 will be needed whenever a programmer decides to add an extension type
 as outlined in 2. below.</p>
-<ol class="arabic" start="2">
+</li>
 <li><p>For a concrete realization of a <code class="docutils literal notranslate"><span class="pre">sortable</span></code> object, the programmer
 needs to create a type extension, for example</p>
 <div class="highlight-f90 notranslate"><div class="highlight"><pre><span></span><span class="k">type</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="p">,</span><span class="w"> </span><span class="k">extends</span><span class="p">(</span><span class="n">sortable</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">sortable_string</span>
@@ -1276,12 +1274,12 @@ needs to create a type extension, for example</p>
 <span class="k">end type</span>
 </pre></div>
 </div>
-</li>
-</ol>
 <p>including an <em>obligatory</em> implementation <code class="docutils literal notranslate"><span class="pre">less_than_string</span></code> of an
 overriding TBP for the deferred binding. The constructor function
 (promised earlier, but not yet delivered) also needs to be updated to
 enable creation of objects of the extended type.</p>
+</li>
+</ol>
 </section>
 <section id="generic-type-bound-procedures-and-operator-overloading">
 <h2>Generic type-bound procedures and operator overloading<a class="headerlink" href="#generic-type-bound-procedures-and-operator-overloading" title="Link to this heading">#</a></h2>
@@ -1312,7 +1310,7 @@ will automatically select the overridden procedure.</p>
 <p>Named generic type-bound procedures that do not overload existing
 operations can also be defined; an example for this is given in the
 section
-“<a class="reference internal" href="#sec:functions_with_parameters"><span class="xref myst">Functions with parameters</span></a>”.
+<em>Functions with parameters</em>.
 The rules for generic resolution work similar as for nonpolymorphic
 generic procedure interfaces, with the additional restriction that
 polymorphic dummy arguments that are related by inheritance cannot be
@@ -1472,7 +1470,7 @@ circular <code class="docutils literal notranslate"><span class="pre">use</span>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unlimited-polymorphic-objects">Unlimited polymorphic objects</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-bound-procedures-tbp-sec-tbp">Type-bound procedures (TBP) {#sec:tbp}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-bound-procedures-tbp">Type-bound procedures (TBP)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract-types-and-interfaces">Abstract types and interfaces</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generic-type-bound-procedures-and-operator-overloading">Generic type-bound procedures and operator overloading</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#completing-the-dependency-inversion">Completing the dependency inversion</a><ul class="nav section-nav flex-column">

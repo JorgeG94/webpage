@@ -705,8 +705,8 @@ document.write(`
                 <article class="bd-article">
                    <section class="tex2jax_ignore mathjax_ignore" id="performance-and-ease-of-use">
 <h1>Performance and ease of use<a class="headerlink" href="#performance-and-ease-of-use" title="Link to this heading">#</a></h1>
-<section id="functions-with-parameters-sec-functions-with-parameters">
-<h2>Functions with parameters {#sec:functions_with_parameters}<a class="headerlink" href="#functions-with-parameters-sec-functions-with-parameters" title="Link to this heading">#</a></h2>
+<section id="functions-with-parameters">
+<h2>Functions with parameters<a class="headerlink" href="#functions-with-parameters" title="Link to this heading">#</a></h2>
 <section id="a-type-definition-for-invocation-of-a-general-function">
 <h3>A type definition for invocation of a general function<a class="headerlink" href="#a-type-definition-for-invocation-of-a-general-function" title="Link to this heading">#</a></h3>
 <p>In scientific applications, a commonly occurring requirement is the need
@@ -954,12 +954,12 @@ feature is recommended against.</p>
 <h2>Arrays of structures versus structures of arrays<a class="headerlink" href="#arrays-of-structures-versus-structures-of-arrays" title="Link to this heading">#</a></h2>
 <p>Returning to our earlier example type body, the next idea would be to
 simulate the dynamics of a large ensemble of bodies. A procedure</p>
-<div class="highlight-f90 notranslate"><div class="highlight"><pre><span></span><span class="k">subroutine </span><span class="n">propagate</span><span class="p">(</span><span class="n">bodies</span><span class="p">,</span><span class="w"> </span><span class="n">delta_t</span><span class="p">,</span><span class="w"> </span><span class="n">force_field</span><span class="p">)</span>
-<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">body</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">bodies</span><span class="p">(:)</span>
-<span class="w">  </span><span class="kt">real</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">delta_t</span>
-<span class="w">  </span><span class="k">type</span><span class="p">(</span><span class="n">field_type</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">force_field</span>
-<span class="w">  </span><span class="p">:</span>
-<span class="k">end subroutine</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">subroutine</span> <span class="n">propagate</span><span class="p">(</span><span class="n">bodies</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">force_field</span><span class="p">)</span>
+  <span class="nb">type</span><span class="p">(</span><span class="n">body</span><span class="p">),</span> <span class="n">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="p">::</span> <span class="n">bodies</span><span class="p">(:)</span>
+  <span class="n">real</span><span class="p">,</span> <span class="n">intent</span><span class="p">(</span><span class="ow">in</span><span class="p">)</span> <span class="p">::</span> <span class="n">delta_t</span>
+  <span class="nb">type</span><span class="p">(</span><span class="n">field_type</span><span class="p">),</span> <span class="n">intent</span><span class="p">(</span><span class="ow">in</span><span class="p">)</span> <span class="p">::</span> <span class="n">force_field</span>
+  <span class="p">:</span>
+<span class="n">end</span> <span class="n">subroutine</span>
 </pre></div>
 </div>
 <p>might be supplied that modifies the components of all ensemble members,
@@ -1044,7 +1044,7 @@ a function.</p></li>
 </div>
 
 <nav id="bd-toc-nav" class="page-toc"><ul class="nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-with-parameters-sec-functions-with-parameters">Functions with parameters {#sec:functions_with_parameters}</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-with-parameters">Functions with parameters</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-type-definition-for-invocation-of-a-general-function">A type definition for invocation of a general function</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-issues-arising-from-object-oriented-programming">Performance issues arising from object-oriented programming</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completing-the-function-type-definition">Completing the function type definition</a></li>
